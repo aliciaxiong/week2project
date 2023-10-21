@@ -18,24 +18,30 @@
 # - parkingSpaces -> list
 # - currentTicket -> dictionary
 
+#50 MAX SPOTS, Cost is $10.00 
+
 class Parkingarage():
     def __init__(self, taketicket, payparking, leavegarage):
-        spots = 100
         self.taketickets = []
         self.payparking = []
         self.leavegarage = []
-
+    
+    #Anthony 
     def taketickets(self):
         pass
 
+    #Alicia 
     def payparking(self):
-        pass
+        payment = int(input("Please enter amount being paid below using the keypad."))
+        if payment == {int(input)}: 
+            print("Thank you for the payment.")
 
+    #Eddie
     def leavegarage(self):
         pass
 
-    
-    projectoop = parkinggarage('taketicket', 'payparking', 'leavegarage')
+
+    projectoop = Parkinggarage('taketicket', 'payparking', 'leavegarage')
     projectoop.runner()
     
     
