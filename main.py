@@ -32,9 +32,7 @@ class Parkingarage():
 
     #Alicia 
     def payparking(self):
-        payment = int(input("Please enter amount being paid below using the keypad."))
-        if payment == {int(input)}: 
-            print("Thank you for the payment.")
+        pass
 
     #Eddie
     def leavegarage(self):
