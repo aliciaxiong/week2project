@@ -18,7 +18,7 @@
 # - parkingSpaces -> list
 # - currentTicket -> dictionary
 
-class parkinggarage():
+class Parkingarage():
     def __init__(self, taketicket, payparking, leavegarage):
         spots = 100
         self.taketickets = []
