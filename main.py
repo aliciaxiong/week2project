@@ -9,12 +9,6 @@
 # - takeTicket
 #    - This should decrease the amount of tickets available by 1
 #    - This should decrease the amount of parkingSpaces available by 1
-class parkingGarage():
-    def __init__(self, availability = 50, TakenTicket = False):
-        self.parkingSpaces = availability
-        self.tickets = availability
-        self.TakenTicket = TakenTicket
-        self.currentticket = {50 : True}
 
 #    - payForParking
 #    - Display an input that waits for an amount from the user and store it in a variable
@@ -24,6 +18,26 @@ class parkingGarage():
 # the user to enter into the console their input
 # so print("My print statement.") > prints the console
 #       whatevervariablehere = input("Please enter something here: ") 
+#Alicia
+#    - payForParking
+#    - Display an input that waits for an amount from the user and store it in a variable
+#    - If the payment variable is not empty then (meaning the ticket has been paid) ->  display a message to the user that their ticket has been paid and they have 15mins to leave
+#    - This should update the "currentTicket" dictionary key "paid" to True 
+
+    #Eddie
+ # -leaveGarage
+#    - If the ticket has been paid, display a message of "Thank You, have a nice day"
+#    - If the ticket has not been paid, display an input prompt for payment
+#       - Once paid, display message "Thank you, have a nice day!"
+#    - Update parkingSpaces list to increase by 1 (meaning add to the parkingSpaces list)
+#    - Update tickets list to increase by 1 (meaning add to the tickets list)
+
+class parkingGarage():
+    def __init__(self, availability = 50, TakenTicket = False):
+        self.parkingSpaces = availability
+        self.tickets = availability
+        self.TakenTicket = TakenTicket
+        self.currentticket = {50 : True}
 
     def takeTicket(self):
         selfPark = input('Would you like to park your car? yes or no?').lower()
@@ -34,6 +48,7 @@ class parkingGarage():
                 print( 'Ticket has been printed, please take and display on your front windshield.')
                 self.parkingSpaces -= 1
                 self.tickets -= 1
+                break
             elif selfPark == 'no' or self.parkingSpaces == 0:
                 print( 'Please exit using the right lane, have a nice day :)')
                 break
@@ -41,12 +56,6 @@ class parkingGarage():
                 print('Error, invalid input. Please restart and try again')
                 break
         print(f'Remaining available spaces: {self.parkingSpaces}')
-
-#Alicia
-#    - payForParking
-#    - Display an input that waits for an amount from the user and store it in a variable
-#    - If the payment variable is not empty then (meaning the ticket has been paid) ->  display a message to the user that their ticket has been paid and they have 15mins to leave
-#    - This should update the "currentTicket" dictionary key "paid" to True 
 
     def payParking(self):
         print("Please scan your ticket.")
@@ -58,8 +67,10 @@ class parkingGarage():
                 #assuming the card automatically deducts $50.00
                 if self.currentticket[50] == True: 
                     print("Please take your receipt and continue forward to the gate.")
+                    break
                 elif self.currentticket[50] != False: 
                     print("Please try again.")
+                    break
                 else:
                     print("Please follow the prompt on screen. Please press the button below for asstance.")
                     break
@@ -77,14 +88,6 @@ class parkingGarage():
                 print("Invalid response, please choose either cash or card. Please press the button below for asstance.")
                 break 
 
-    #Eddie
- # -leaveGarage
-#    - If the ticket has been paid, display a message of "Thank You, have a nice day"
-#    - If the ticket has not been paid, display an input prompt for payment
-#       - Once paid, display message "Thank you, have a nice day!"
-#    - Update parkingSpaces list to increase by 1 (meaning add to the parkingSpaces list)
-#    - Update tickets list to increase by 1 (meaning add to the tickets list)
-
     def leavegarage(self):
         print("Scan your receipt below.")
         #assuming receipt is good to go
@@ -93,14 +96,14 @@ class parkingGarage():
         print("Have a great day, thank you for choosing us.")
 
     def runner(self):
-
         while True:
-            choice = input('What would you like to do? park or pay').lower()
+            choice = input('What would you like to do? park, pay, leave ')
             if (choice == 'park'):
-                print('Please follwow the prompt and take your ticket and validate or pay after.')
-                break
+                self.takeTicket()
             elif (choice == 'pay'):
-                print('Please follow prompt.')
+                self.payParking()
+            elif(choice == 'leave'): 
+                self.leavegarage()
             else: 
                 print('Invalid input, please try again')
         
