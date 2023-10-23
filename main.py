@@ -43,6 +43,12 @@ def takeTicket(self):
                 break
         print(f'Remaining available spaces: {self.parkingSpaces}')
 
+#Alicia
+#    - payForParking
+#    - Display an input that waits for an amount from the user and store it in a variable
+#    - If the payment variable is not empty then (meaning the ticket has been paid) ->  display a message to the user that their ticket has been paid and they have 15mins to leave
+#    - This should update the "currentTicket" dictionary key "paid" to True 
+
 def payParking(self):
         print("Please scan your ticket.")
         #assuming the ticket has been scanned.
