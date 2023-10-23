@@ -2,19 +2,20 @@
 # - tickets -> list
 # - parkingSpaces -> list
 # - currentTicket -> dictionary
-#50 MAX SPOTS
+# - 50 MAX SPOTS
 
 class Parkingarage():
     def __init__(self, taketicket, payparking, leavegarage):
         self.taketickets = []
         self.payparking = []
         self.leavegarage = []
-
+    
     #Anthony 
     # Your parking gargage class should have the following methods:
 # - takeTicket
 #    - This should decrease the amount of tickets available by 1
 #    - This should decrease the amount of parkingSpaces available by 1
+
     def taketickets(self):
         pass
 
@@ -41,7 +42,6 @@ class Parkingarage():
                     print("Payment completed.")
         else:
             print("Invalid response, please choose an either cash or card.")
-
 
     #Eddie
  # -leaveGarage
