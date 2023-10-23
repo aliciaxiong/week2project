@@ -11,11 +11,11 @@
 #    - This should decrease the amount of tickets available by 1
 #    - This should decrease the amount of parkingSpaces available by 1
 class parkingGarage():
-        def __init__(self, availability = 50, TakenTicket = False):
-            self.parkingSpaces = availability
-            self.tickets = availability
-            self.TakenTicket = TakenTicket
-            self.currentticket = {50 : True}
+    def __init__(self, availability = 50, TakenTicket = False):
+        self.parkingSpaces = availability
+        self.tickets = availability
+        self.TakenTicket = TakenTicket
+        self.currentticket = {50 : True}
 
 #    - payForParking
 #    - Display an input that waits for an amount from the user and store it in a variable
@@ -26,16 +26,16 @@ class parkingGarage():
 # so print("My print statement.") > prints the console
 #       whatevervariablehere = input("Please enter something here: ") 
 
-def takeTicket(self):
-        selfPark = input('Would you like to park your car? Yes or No?').lower()
+    def takeTicket(self):
+        selfPark = input('Would you like to park your car? yes or no?').lower()
         self.parkingSpaces = 50
         self.tickets = 50
         while True:
-            if selfPark == 'Yes' and {self.parkingSpaces} != 0:
+            if selfPark == 'yes' and {self.parkingSpaces} != 0:
                 print( 'Ticket has been printed, please take and display on your front windshield.')
                 self.parkingSpaces -= 1
                 self.tickets -= 1
-            elif selfPark == 'No' or self.parkingSpaces == 0:
+            elif selfPark == 'no' or self.parkingSpaces == 0:
                 print( 'Please exit using the right lane, have a nice day :)')
                 break
             else:
@@ -49,7 +49,7 @@ def takeTicket(self):
 #    - If the payment variable is not empty then (meaning the ticket has been paid) ->  display a message to the user that their ticket has been paid and they have 15mins to leave
 #    - This should update the "currentTicket" dictionary key "paid" to True 
 
-def payParking(self):
+    def payParking(self):
         print("Please scan your ticket.")
         #assuming the ticket has been scanned.
         payment_option = input("Thank you for choosing us, would you like to pay by cash or card?")
@@ -86,20 +86,21 @@ def payParking(self):
 #    - Update parkingSpaces list to increase by 1 (meaning add to the parkingSpaces list)
 #    - Update tickets list to increase by 1 (meaning add to the tickets list)
 
-def leavegarage(self):
+    def leavegarage(self):
         print("Scan your receipt below.")
         #assuming receipt is good to go
         self.parkingSpaces += 1
         self.tickets += 1
         print("Have a great day, thank you for choosing us.")
 
-def runner(self):
+    def runner(self):
+
         while True:
-            choice = input('What would you like to do? Park or Pay').lower()
-            if (choice == 'Park'):
-                print('Please take your ticket and validate or pay after.')
+            choice = input('What would you like to do? park or pay').lower()
+            if (choice == 'park'):
+                print(f'Please follwow the prompt and take your ticket and validate or pay after.')
                 break
-            elif (choice == 'Pay'):
+            elif (choice == 'pay'):
                 print('Please follow prompt.')
             else: 
                 print('Invalid input, please try again')
