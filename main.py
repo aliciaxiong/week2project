@@ -4,9 +4,8 @@
 # - currentTicket -> dictionary
 # - 50 MAX SPOTS
 
-    
-    #Anthony 
-    # Your parking gargage class should have the following methods:
+#Anthony 
+# Your parking gargage class should have the following methods:
 # - takeTicket
 #    - This should decrease the amount of tickets available by 1
 #    - This should decrease the amount of parkingSpaces available by 1
@@ -59,7 +58,7 @@ class parkingGarage():
                 #assuming the card automatically deducts $50.00
                 if self.currentticket[50] == True: 
                     print("Please take your receipt and continue forward to the gate.")
-                elif self.currentticket[50] == False: 
+                elif self.currentticket[50] != False: 
                     print("Please try again.")
                 else:
                     print("Please follow the prompt on screen. Please press the button below for asstance.")
@@ -69,7 +68,7 @@ class parkingGarage():
                 payment = int(input("This machine does not provide change, please use exact amount only. Enter payment amount using the keypad."))
                 if self.currentticket[50] == True:
                     print("Thank you, your payment has been complete. Please take your receipt and continue forward to the gate.")
-                elif self.currentticket[50] == False: 
+                elif self.currentticket[50] != False: 
                     print("There is still a balance, please make full payment.")
                 else: 
                     print("Please follow the prompt on screen. Please press the button below for asstance.")
@@ -98,7 +97,7 @@ class parkingGarage():
         while True:
             choice = input('What would you like to do? park or pay').lower()
             if (choice == 'park'):
-                print(f'Please follwow the prompt and take your ticket and validate or pay after.')
+                print('Please follwow the prompt and take your ticket and validate or pay after.')
                 break
             elif (choice == 'pay'):
                 print('Please follow prompt.')
@@ -107,18 +106,3 @@ class parkingGarage():
         
 projectoop = parkingGarage()
 projectoop.runner()
-
-# takeTicket = parkingGarage()  
-# payParking = parkingGarage()
-# leavegarage = parkingGarage()
-# parkingGarage()
-
-# class parkingGarage():
-#         def __init__(self, availability = 50, TakenTicket = False):
-#             self.parkingSpaces = availability
-#             self.tickets = availability
-#             self.TakenTicket = TakenTicket
-#             self.currentticket = {50 : True}
-
-# projectoop = Parkinggarage('taketicket', 'payparking', 'leavegarage')
-# projectoop.runner()
