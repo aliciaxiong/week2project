@@ -93,20 +93,24 @@ def leavegarage(self):
         self.tickets += 1
         print("Have a great day, thank you for choosing us.")
 
-
-
-
-
-
-# projectoop = parkingGarage()
-# projectoop.runner()
-
+def runner(self):
+        while True:
+            choice = input('What would you like to do? Park or Pay').lower()
+            if (choice == 'Park'):
+                print('Please take your ticket and validate or pay after.')
+                break
+            elif (choice == 'Pay'):
+                print('Please follow prompt.')
+            else: 
+                print('Invalid input, please try again')
+        
+projectoop = parkingGarage()
+projectoop.runner()
 
 # takeTicket = parkingGarage()  
 # payParking = parkingGarage()
 # leavegarage = parkingGarage()
 # parkingGarage()
-
 
 # class parkingGarage():
 #         def __init__(self, availability = 50, TakenTicket = False):
@@ -114,21 +118,6 @@ def leavegarage(self):
 #             self.tickets = availability
 #             self.TakenTicket = TakenTicket
 #             self.currentticket = {50 : True}
-
-# def runner(self):
-#         while True:
-#             choice = input('What would you like to do?(add, remove, show, or quit)').lower()
-#             if (choice == 'quit'):
-#                 print(f'Here is your current cart {self.depth_chart}')
-#                 break
-#             elif (choice == 'add'):
-#                 self.addItem()
-#             elif (choice == 'remove'):
-#                 self.removeItem()
-#             elif (choice == 'show'):
-#                 self.showCart()
-#             else: 
-#                 print('Invalid input, please try again')'
 
 # projectoop = Parkinggarage('taketicket', 'payparking', 'leavegarage')
 # projectoop.runner()
