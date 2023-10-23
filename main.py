@@ -53,27 +53,27 @@ def payParking(self):
         print("Please scan your ticket.")
         #assuming the ticket has been scanned.
         payment_option = input("Thank you for choosing us, would you like to pay by cash or card?")
-
         while True:  
-                if payment_option == "card":
-                    print("Please tap your card below.")
-                    self.currentticket[50] = True 
+            if payment_option == "card":
+                print("Please tap your card below.")
+                #assuming the card automatically deducts $50.00
+                if self.currentticket[50] == True: 
                     print("Thank you, please continue forward to the gate.")
+                if self.currentticket[50] == False: 
+                    print("Please try again.")
+                else: print("Please follow the prompt on screen.")
 
-                elif payment_option == "cash":
-                    payment = int(input("This machine does not provide change, please use exact amount only. Enter payment amount using the keypad."))
-                    if self.currentticket[50] is True:
-                        print("Thank you, your payment has been complete. Please continue forward to the gate.")
-                        break 
-
-                    if self.currentticket[50] is False: 
-                        print("There is still a balance, please make additional payment.")
-
-                    else: 
-                        print("Payment completed.")
-                        break 
-        else:
-            print("Invalid response, please choose either cash or card.")
+            if payment_option == "cash":
+                payment = int(input("This machine does not provide change, please use exact amount only. Enter payment amount using the keypad."))
+                if self.currentticket[50] == True:
+                    print("Thank you, your payment has been complete. Please continue forward to the gate.")
+                if self.currentticket[50] == False: 
+                    print("There is still a balance, please make full payment.")
+                else: 
+                    print("Please follow the prompt on screen.")
+                    break 
+            else:
+                print("Invalid response, please choose either cash or card.")
 
     #Eddie
  # -leaveGarage
