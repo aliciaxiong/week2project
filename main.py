@@ -58,22 +58,25 @@ def payParking(self):
                 print("Please tap your card below.")
                 #assuming the card automatically deducts $50.00
                 if self.currentticket[50] == True: 
-                    print("Thank you, please continue forward to the gate.")
-                if self.currentticket[50] == False: 
+                    print("Please take your receipt and continue forward to the gate.")
+                elif self.currentticket[50] == False: 
                     print("Please try again.")
-                else: print("Please follow the prompt on screen.")
+                else:
+                    print("Please follow the prompt on screen. Please press the button below for asstance.")
+                    break
 
             if payment_option == "cash":
                 payment = int(input("This machine does not provide change, please use exact amount only. Enter payment amount using the keypad."))
                 if self.currentticket[50] == True:
-                    print("Thank you, your payment has been complete. Please continue forward to the gate.")
-                if self.currentticket[50] == False: 
+                    print("Thank you, your payment has been complete. Please take your receipt and continue forward to the gate.")
+                elif self.currentticket[50] == False: 
                     print("There is still a balance, please make full payment.")
                 else: 
-                    print("Please follow the prompt on screen.")
+                    print("Please follow the prompt on screen. Please press the button below for asstance.")
                     break 
             else:
-                print("Invalid response, please choose either cash or card.")
+                print("Invalid response, please choose either cash or card. Please press the button below for asstance.")
+                break 
 
     #Eddie
  # -leaveGarage
@@ -84,8 +87,48 @@ def payParking(self):
 #    - Update tickets list to increase by 1 (meaning add to the tickets list)
 
 def leavegarage(self):
-        pass
+        print("Scan your receipt below.")
+        #assuming receipt is good to go
+        self.parkingSpaces += 1
+        self.tickets += 1
+        print("Have a great day, thank you for choosing us.")
 
 
-    
-    
+
+
+
+
+# projectoop = parkingGarage()
+# projectoop.runner()
+
+
+# takeTicket = parkingGarage()  
+# payParking = parkingGarage()
+# leavegarage = parkingGarage()
+# parkingGarage()
+
+
+# class parkingGarage():
+#         def __init__(self, availability = 50, TakenTicket = False):
+#             self.parkingSpaces = availability
+#             self.tickets = availability
+#             self.TakenTicket = TakenTicket
+#             self.currentticket = {50 : True}
+
+# def runner(self):
+#         while True:
+#             choice = input('What would you like to do?(add, remove, show, or quit)').lower()
+#             if (choice == 'quit'):
+#                 print(f'Here is your current cart {self.depth_chart}')
+#                 break
+#             elif (choice == 'add'):
+#                 self.addItem()
+#             elif (choice == 'remove'):
+#                 self.removeItem()
+#             elif (choice == 'show'):
+#                 self.showCart()
+#             else: 
+#                 print('Invalid input, please try again')'
+
+# projectoop = Parkinggarage('taketicket', 'payparking', 'leavegarage')
+# projectoop.runner()
